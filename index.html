@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Styleora | Calm, Practical Ideas for Styling Your Home</title>
+<meta name="description" content="Styleora is an independent reading space about home styling: how light, colour, layout and texture shape the way a room feels, with simple ideas for everyday spaces.">
+
+<!-- Google AdSense / Google Ads script: paste your site code here (inside head) -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --teal:#12363A;
+  --teal-2:#1E5258;
+  --oak:#B8864B;
+  --stone:#F4F5F2;
+  --white:#FFFFFF;
+  --text:#25302F;
+  --muted:#5B6866;
+  --line:#DADFDB;
+  --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',system-ui,sans-serif;background:var(--stone);color:var(--text);line-height:1.75;font-size:17px;width:100%;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:var(--teal-2)}
+a:focus-visible,summary:focus-visible,.btn:focus-visible{outline:3px solid var(--oak);outline-offset:3px}
+h1,h2,h3{font-family:'DM Serif Display',Georgia,serif;font-weight:400;line-height:1.15;color:var(--teal)}
+.wrap{width:100%;max-width:1200px;margin:0 auto;padding:0 28px}
+.narrow{max-width:780px}
+
+/* header */
+header{position:absolute;top:0;left:0;right:0;z-index:20}
+.bar{display:flex;align-items:center;justify-content:space-between;height:84px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:#fff}
+.brand span{font-family:'DM Serif Display',serif;font-size:1.7rem}
+nav ul{display:flex;gap:30px;list-style:none}
+nav a{color:#fff;text-decoration:none;font-weight:500;font-size:.95rem;opacity:.92}
+nav a:hover{opacity:1;text-decoration:underline;text-underline-offset:6px}
+
+/* hero: full-bleed image with panel */
+.hero{position:relative;min-height:88vh;display:flex;align-items:flex-end;background:var(--teal) url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1900&q=80') center/cover no-repeat}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,54,58,.55) 0%,rgba(18,54,58,.15) 40%,rgba(18,54,58,.35) 100%)}
+.hero .wrap{position:relative;padding-bottom:0}
+.hero-card{background:var(--white);max-width:640px;padding:46px 46px 42px;border-radius:var(--radius) var(--radius) 0 0}
+.hero-card h1{font-size:clamp(2.3rem,4.6vw,3.7rem);margin-bottom:18px}
+.hero-card p{color:var(--muted);margin-bottom:28px;font-size:1.08rem}
+.btn{display:inline-block;background:var(--teal);color:#fff;text-decoration:none;padding:14px 28px;border-radius:50px;font-weight:600;transition:background .2s}
+.btn:hover{background:var(--oak)}
+
+/* sections */
+section{padding:84px 0}
+.sec-head{max-width:700px;margin-bottom:44px}
+.sec-head h2{font-size:clamp(2rem,3.6vw,2.8rem);margin-bottom:14px}
+.sec-head p{color:var(--muted)}
+.white{background:var(--white)}
+
+/* intro two columns */
+.intro{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:start}
+.intro h2{font-size:clamp(2rem,3.4vw,2.7rem)}
+.intro p{margin-bottom:20px;color:var(--muted)}
+
+/* room tiles */
+.rooms{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.room{background:var(--white);border-radius:var(--radius);overflow:hidden;border:1px solid var(--line)}
+.room img{width:100%;height:240px;object-fit:cover;background:#cfd8d5}
+.room div{padding:24px 24px 26px}
+.room h3{font-size:1.45rem;margin-bottom:10px}
+.room p{font-size:.98rem;color:var(--muted)}
+
+/* feature split */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.split.flip .pic{order:2}
+.pic{border-radius:var(--radius);overflow:hidden;background:#cfd8d5}
+.pic img{width:100%;height:100%;min-height:440px;object-fit:cover}
+.split h2{font-size:clamp(1.9rem,3.2vw,2.6rem);margin-bottom:18px}
+.split p{color:var(--muted);margin-bottom:18px}
+
+/* light layers */
+.layers{display:grid;grid-template-columns:repeat(3,1fr);gap:0;background:var(--teal);border-radius:var(--radius);overflow:hidden}
+.layer{padding:38px 34px;color:#DCE8E6}
+.layer+.layer{border-left:1px solid rgba(255,255,255,.15)}
+.layer h3{color:#fff;font-size:1.55rem;margin-bottom:12px}
+.layer p{font-size:.99rem}
+
+/* colour swatch cards */
+.palettes{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.pal{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+.sw{display:flex;height:70px;border-radius:10px;overflow:hidden;margin-bottom:18px}
+.sw i{flex:1}
+.pal h3{font-size:1.35rem;margin-bottom:8px}
+.pal p{font-size:.97rem;color:var(--muted)}
+
+/* tips */
+.tips{display:grid;grid-template-columns:1fr 1fr;gap:20px 56px}
+.tip{padding:20px 0;border-top:2px solid var(--teal)}
+.tip h3{font-size:1.3rem;margin-bottom:8px}
+.tip p{color:var(--muted);font-size:.99rem}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:2fr 1fr 1fr;gap:18px}
+.gal .ph{border-radius:var(--radius);overflow:hidden;background:#cfd8d5}
+.gal img{width:100%;height:100%;min-height:300px;object-fit:cover}
+.gal .ph:first-child{grid-row:span 2}
+.gal .ph:first-child img{min-height:620px}
+
+/* faq */
+details{border-bottom:1px solid var(--line);padding:20px 0}
+summary{cursor:pointer;font-weight:600;font-size:1.08rem;list-style:none;display:flex;justify-content:space-between;gap:20px;color:var(--teal)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.5rem;line-height:1;color:var(--oak)}
+details[open] summary::after{content:"\2212"}
+details p{margin-top:14px;color:var(--muted)}
+
+/* ad slots */
+.ad-slot{width:100%;max-width:1200px;margin:0 auto;padding:30px 28px;min-height:120px;text-align:center}
+
+/* disclaimer */
+.disclaimer{background:var(--white);border:1px solid var(--line);border-top:5px solid var(--oak);border-radius:var(--radius);padding:32px 36px}
+.disclaimer h3{font-size:1.45rem;margin-bottom:12px}
+.disclaimer p{color:var(--muted);font-size:.97rem;margin-bottom:10px}
+
+/* footer */
+footer{background:var(--teal);color:#B9CCCA;padding:56px 0 32px}
+.foot{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;margin-bottom:32px}
+.foot p{max-width:420px;font-size:.95rem;margin-top:14px}
+.foot ul{list-style:none}
+.foot li{margin-bottom:10px}
+.foot a{color:#fff;text-decoration:none}
+.foot a:hover{text-decoration:underline}
+.copy{border-top:1px solid rgba(255,255,255,.18);padding-top:20px;font-size:.88rem}
+
+@media(max-width:920px){
+  nav{display:none}
+  .hero{min-height:80vh}
+  .hero-card{padding:32px 26px}
+  .intro,.split,.tips,.palettes{grid-template-columns:1fr;gap:34px}
+  .split.flip .pic{order:0}
+  .rooms,.layers{grid-template-columns:1fr}
+  .layer+.layer{border-left:none;border-top:1px solid rgba(255,255,255,.15)}
+  .gal{grid-template-columns:1fr}
+  .gal .ph:first-child{grid-row:auto}
+  .gal .ph:first-child img{min-height:300px}
+  .pic img{min-height:300px}
+  section{padding:58px 0}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="Styleora home">
+      <svg width="36" height="36" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="none" stroke="#fff" stroke-width="2"/><path d="M11 25V17l9-6 9 6v8" fill="none" stroke="#fff" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><rect x="17" y="21" width="6" height="6" rx="1" fill="#B8864B"/></svg>
+      <span>Styleora</span>
+    </a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#rooms">Rooms</a></li>
+        <li><a href="#light">Light</a></li>
+        <li><a href="#colour">Colour</a></li>
+        <li><a href="#faq">Questions</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap">
+    <div class="hero-card">
+      <h1>A home should feel easy to live in.</h1>
+      <p>Styleora is an independent reading space about home styling. We explain how light, colour, layout and texture shape the way a room feels, in simple language and with ideas that suit everyday budgets.</p>
+      <a class="btn" href="#about">Start reading</a>
+    </div>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section id="about">
+  <div class="wrap intro">
+    <h2>Why Styleora exists</h2>
+    <div>
+      <p>Most people do not need a dramatic makeover to enjoy their home more. What usually makes a space feel unfinished is a handful of small, fixable things: a dark corner, a sofa pushed against the wall for no reason, colours that do not quite agree, or a shelf that has quietly become a storage zone.</p>
+      <p>Styleora brings these everyday problems into focus. Each article looks at one idea, such as how a lamp changes a room after sunset or why a rug can make a living area feel organised, and explains it clearly so you can try it yourself.</p>
+      <p>We do not follow trends or tell you what to buy. Our goal is to help you understand how rooms work, so that every choice, from rearranging furniture to picking a paint shade, feels calm and confident.</p>
+    </div>
+  </div>
+</section>
+
+<div class="ad-slot">
+  <!-- Google ad unit 1: paste your ad code here -->
+  <!--
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="1111111111" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  -->
+</div>
+
+<!-- ROOMS -->
+<section id="rooms" style="padding-top:40px">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Room by room thinking</h2>
+      <p>Every room has a main job. When styling supports that job, the space feels natural to use.</p>
+    </div>
+    <div class="rooms">
+      <article class="room">
+        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" alt="Bright living room with a comfortable sofa" loading="lazy">
+        <div>
+          <h3>Living room</h3>
+          <p>This is where people gather, relax and talk. Arrange seating to face each other rather than a single wall, leave clear walking paths and keep a spot for a side table within arm's reach of every seat.</p>
+        </div>
+      </article>
+      <article class="room">
+        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=80" alt="Calm bedroom with soft bedding" loading="lazy">
+        <div>
+          <h3>Bedroom</h3>
+          <p>A bedroom works best when it is quiet to the eye. Soft textiles, a limited colour palette and warm, low lighting help the room signal rest, while a clear bedside surface keeps evenings tidy.</p>
+        </div>
+      </article>
+      <article class="room">
+        <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=800&q=80" alt="Clean and well organised kitchen" loading="lazy">
+        <div>
+          <h3>Kitchen</h3>
+          <p>Kitchens are about flow. Keep everyday items within easy reach, store rarely used tools higher up and use good task lighting over the counter so that cooking feels comfortable and unhurried.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHT -->
+<section class="white" id="light">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Three layers of light</h2>
+      <p>Light changes the mood of a room more than almost any object. Designers usually think about it in three layers, and using all three gives a room depth.</p>
+    </div>
+    <div class="layers">
+      <div class="layer">
+        <h3>Ambient</h3>
+        <p>The general glow that lets you move around safely. It can come from ceiling fixtures, a window or a floor lamp bounced off a wall. Soft, even ambient light prevents harsh shadows.</p>
+      </div>
+      <div class="layer">
+        <h3>Task</h3>
+        <p>Focused light for reading, cooking, studying or working. A desk lamp, an under-shelf strip or a bedside reading light places brightness exactly where your eyes need it.</p>
+      </div>
+      <div class="layer">
+        <h3>Accent</h3>
+        <p>Gentle highlights that add character, such as a small lamp on a shelf or a light washing over a textured wall. Accent light makes evenings feel warmer and more personal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE 1 -->
+<section>
+  <div class="wrap split">
+    <div class="pic"><img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=900&q=80" alt="Interior corner with layered textures and soft lighting" loading="lazy"></div>
+    <div>
+      <h2>Layout before decoration</h2>
+      <p>It is tempting to start with accessories, but the way furniture is placed decides most of how a room feels. Before adding anything new, try moving what you have. Pull the sofa a little away from the wall, angle a chair toward the window, or give the main walkway a clear line from door to seating.</p>
+      <p>A useful test is to walk through the room as if you were a guest. If you have to turn sideways, step over something or reach awkwardly for a surface, the layout is working against you. Small adjustments of a few inches often make a room feel noticeably larger.</p>
+      <p>Once the layout feels natural, decoration has a clean base to build on. Pieces you add later, from cushions to artwork, will look intentional instead of crowded.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COLOUR -->
+<section class="white" id="colour">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Colour that sits well together</h2>
+      <p>You do not need to be an expert to choose a pleasant palette. A simple formula is one main shade, one supporting shade and one small accent. These example palettes show how it can look in practice.</p>
+    </div>
+    <div class="palettes">
+      <div class="pal">
+        <div class="sw"><i style="background:#E8E6DF"></i><i style="background:#A8B5A2"></i><i style="background:#5F7A6E"></i><i style="background:#B8864B"></i></div>
+        <h3>Quiet greens</h3>
+        <p>Soft stone walls with sage and deep green details create a restful setting that pairs well with natural wood and plants.</p>
+      </div>
+      <div class="pal">
+        <div class="sw"><i style="background:#F1ECE6"></i><i style="background:#CBB9A6"></i><i style="background:#8C7765"></i><i style="background:#2F3B45"></i></div>
+        <h3>Warm neutrals</h3>
+        <p>Sand, clay and soft brown tones feel welcoming in living rooms, and a dark charcoal accent gives the scheme structure.</p>
+      </div>
+      <div class="pal">
+        <div class="sw"><i style="background:#EAF0F2"></i><i style="background:#B9CCD6"></i><i style="background:#5E8296"></i><i style="background:#1F3B4D"></i></div>
+        <h3>Cool blues</h3>
+        <p>Pale sky shades with deeper navy accents keep bedrooms and study areas calm, especially in rooms that receive lots of daylight.</p>
+      </div>
+      <div class="pal">
+        <div class="sw"><i style="background:#F5F2F0"></i><i style="background:#D8C3C0"></i><i style="background:#A9777A"></i><i style="background:#4A3B3F"></i></div>
+        <h3>Soft dusk tones</h3>
+        <p>Muted rose and plum shades add gentle warmth without feeling loud, ideal for reading corners and small guest rooms.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE 2 -->
+<section>
+  <div class="wrap split flip">
+    <div class="pic"><img src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&w=900&q=80" alt="Indoor plants beside a bright window" loading="lazy"></div>
+    <div>
+      <h2>Texture, plants and the finishing touches</h2>
+      <p>Once layout, light and colour are settled, texture is what makes a room feel lived in. Mix smooth surfaces with softer ones: a woven rug, a linen curtain, a wooden table, a ceramic bowl. The contrast gives the eye something to rest on.</p>
+      <p>Plants are a simple way to bring in life and movement. A single large plant near a window or a few small ones along a shelf can soften hard edges. Choose varieties that suit the light in your room and the time you realistically have for care.</p>
+      <p>Finally, edit. Leave some surfaces empty, group objects in odd numbers and keep only items you genuinely like or use. A room that has space to breathe almost always feels more comfortable than one filled to the edges.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TIPS -->
+<section class="white">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Small changes, noticeable results</h2>
+      <p>Try one of these this week and see how the room responds.</p>
+    </div>
+    <div class="tips">
+      <div class="tip"><h3>Hang curtains higher</h3><p>Mounting the rod close to the ceiling and letting fabric fall to the floor makes windows look taller and the room feel more open.</p></div>
+      <div class="tip"><h3>Anchor with a rug</h3><p>A rug large enough for front furniture legs to rest on pulls a seating area together and adds comfort underfoot.</p></div>
+      <div class="tip"><h3>Swap harsh bulbs</h3><p>Warm white bulbs for evenings and softer shades on lamps reduce glare and make living spaces feel more relaxed.</p></div>
+      <div class="tip"><h3>Use a mirror wisely</h3><p>Placing a mirror opposite a window reflects daylight deeper into the room and can brighten dim corners.</p></div>
+      <div class="tip"><h3>Create one calm surface</h3><p>Choose a console, bedside table or shelf and keep it deliberately simple. One tidy area helps the entire room feel organised.</p></div>
+      <div class="tip"><h3>Hang art at eye level</h3><p>Centre pictures at about eye height so they relate to the people in the room and to the furniture beneath them.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Spaces that feel settled</h2>
+      <p>A few examples of how simple choices come together in real rooms.</p>
+    </div>
+    <div class="gal">
+      <div class="ph"><img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1000&q=80" alt="Open living area with natural light" loading="lazy"></div>
+      <div class="ph"><img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=700&q=80" alt="Tidy interior with neutral furniture" loading="lazy"></div>
+      <div class="ph"><img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=700&q=80" alt="Dining area with wooden table" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<div class="ad-slot">
+  <!-- Google ad unit 2: paste your ad code here -->
+  <!--
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="2222222222" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  -->
+</div>
+
+<!-- FAQ -->
+<section id="faq" class="white">
+  <div class="wrap narrow">
+    <div class="sec-head"><h2>Common questions</h2></div>
+    <details>
+      <summary>Is Styleora a store or a design service?</summary>
+      <p>No. Styleora is an informational website. We do not sell furniture, decor or any products, and we do not offer design contracting. The pages are written only to share general ideas and knowledge.</p>
+    </details>
+    <details>
+      <summary>Do I need a big budget to style my home?</summary>
+      <p>Not at all. Rearranging furniture, improving lighting habits and editing clutter cost very little and often make the biggest difference. Purchases can come slowly, once you know what the room truly needs.</p>
+    </details>
+    <details>
+      <summary>How do I style a small space?</summary>
+      <p>Keep colours light and consistent, choose furniture with slim legs so the floor stays visible, and use vertical space with shelves and tall curtains. Leaving some area empty helps a small room feel larger.</p>
+    </details>
+    <details>
+      <summary>Where should I begin if everything feels overwhelming?</summary>
+      <p>Choose one room and one problem, such as poor lighting or an awkward layout. Solve that first, live with it for a week, and then move on. Small, steady progress is easier than a full redesign.</p>
+    </details>
+    <details>
+      <summary>How do I know if a colour will suit my room?</summary>
+      <p>Test a sample on the wall and look at it at different times of day. Daylight, evening lamps and nearby furniture all change how a shade appears, so observing it for a few days is a reliable way to decide.</p>
+    </details>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<section>
+  <div class="wrap narrow">
+    <div class="disclaimer" role="note">
+      <h3>Disclaimer</h3>
+      <p>The content on Styleora is provided for general informational and educational purposes only. It reflects common observations about home styling and should not be treated as professional design, architectural, structural, electrical or safety advice.</p>
+      <p>Every home is different. Before making changes involving wiring, walls, fixtures or structure, please consult a qualified professional. Images are used for illustration only and do not represent or endorse any specific product, brand, designer or service.</p>
+      <p>Styleora does not sell products or services and makes no guarantees about results from applying the ideas shared here. Any decision you make is your own responsibility. Third-party advertising may appear on this site, and we are not responsible for the content of external advertisers.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="#top" aria-label="Styleora home">
+          <svg width="36" height="36" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="none" stroke="#fff" stroke-width="2"/><path d="M11 25V17l9-6 9 6v8" fill="none" stroke="#fff" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><rect x="17" y="21" width="6" height="6" rx="1" fill="#B8864B"/></svg>
+          <span>Styleora</span>
+        </a>
+        <p>An independent reading space about calm, practical home styling ideas.</p>
+      </div>
+      <ul>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms &amp; Conditions</a></li>
+      </ul>
+    </div>
+    <div class="copy">&copy; 2026 Styleora. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>
